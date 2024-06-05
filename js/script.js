@@ -20,11 +20,6 @@ const loading= (isLoading)=>
     }
 
 }
-// function searchHandler2(){
-//     const searchField=document.getElementById("searchField2");
-//     searchText=searchField.value;
-//     loadPhone(searchText);
-// }
 const loadPhone= async(searchText,isShowAll)=>{
     const res = await fetch(`https://openapi.programming-hero.com/api/phones?search=${searchText}`);
     const data =await res.json();
@@ -78,16 +73,6 @@ const displayPhones = (phones,isShowAll)=>{
     });
     //hide loading spinner
     loading(false);
-    // function noItem(isNoItem)
-    // {
-    //     if(isNoItem){
-    //         const noItemContainer=document.getElementById("noItem");
-    //         noItemContainer.classList.remove('hidden');
-    //     }
-    //     else{
-    //         noItemContainer.classList.add('hidden');
-    //     }
-    // }
 }
 
 // show All Button
@@ -123,10 +108,6 @@ const showPhoneDetails=(details)=>{
     let string="";
     for (const key in features) {
 
-        //detailsSpec.innerHTML=`${features[key]} <br>`;
-
-        //detailsSpec.innerText=`${features[key]} <br>`;
-        //console.log(`${key}:${features[key]}`);
         string=string+`${key}: ${features[key]} \n`;
 
     }
